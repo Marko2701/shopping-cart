@@ -1,0 +1,9 @@
+ul.mainProducts{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}

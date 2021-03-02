@@ -1,0 +1,51 @@
+li.cartProduct {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e2e2e7;
+    
+}
+
+li.cartProduct img{
+    width: 10%;
+    
+}
+
+div.nameNprice {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    line-height: 30px;
+}
+
+p.qty {
+    padding-right: 40px;
+    width: 15%;
+}
+
+div.cartButtons {
+    display: flex;
+    width: 30%;
+}
+
+div.cartButtons button{
+   width: 50%;
+   height: 50px;
+   margin: 0 3px; 
+   background-color: #f7f7f9; 
+   cursor: pointer;
+}
+
+div.cartButtons button:hover {
+    background-color: #dbdbe0;
+}
+
+button#delete{
+    margin-left: 50px;
+}
+
+div.cartButtons button i {
+    font-size: 25px;
+}

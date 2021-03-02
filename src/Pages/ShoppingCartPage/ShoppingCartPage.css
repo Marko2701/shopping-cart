@@ -1,0 +1,17 @@
+#shoppingCartPage {
+    background: white;
+}
+
+#cart {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    background: white;
+}
+
+#emptyCart {
+    padding-top: 200px;
+    width: 15%;
+    margin: 0 auto;
+    font-size: 30px;
+}

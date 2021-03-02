@@ -1,0 +1,35 @@
+div.checkout {
+    margin-left: 100px;
+    width: 50%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    font-size: large;
+    font-weight: lighter;
+}
+
+div.checkoutBtns button{
+    padding: 15px;
+    font-size: small;
+    transition: ease-in;
+    cursor: pointer;
+}
+
+div.checkoutBtns button.checkoutBtn {
+    background-color: black;
+    color: white;
+}
+
+div.checkoutBtns button.clearBtn {
+    border: none;
+    outline: none;
+    background-color: white;
+}
+
+
+
+
+
