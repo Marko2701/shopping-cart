@@ -16,9 +16,9 @@ function ShoppingCartProduct(props) {
             <p className='qty'>Qty: {props.product.qty}</p>
 
             <div className='cartButtons'>
-                <button onClick={() => props.incrementItem(props.product.id, 1)}><i class="fas fa-plus-circle"></i></button>
-                <button onClick={() => props.decrementItem(props.product.id, 1)}><i class="fas fa-minus-circle"></i></button>
-                <button id='delete' onClick={() => props.handleRemove(props.product.id)}><i class="fas fa-trash-alt"></i></button>
+                <button onClick={() => props.incrementItem(props.product.id, 1)}><i className="fas fa-plus-circle"></i></button>
+                <button onClick={() => props.decrementItem(props.product.id, 1)}><i className="fas fa-minus-circle"></i></button>
+                <button id='delete' onClick={() => props.handleRemove(props.product.id)}><i className="fas fa-trash-alt"></i></button>
             </div>
         </li>
 

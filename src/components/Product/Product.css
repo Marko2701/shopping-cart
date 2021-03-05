@@ -17,13 +17,13 @@ li.product img {
     width: 100%;
 }
 
-#addToCartBtn {
+.addToCartBtn {
     width: 50%;
     margin: 0 auto;
     padding-top: 15px;
 }
 
-#addToCartBtn button {
+.addToCartBtn button {
     width: 100%;
     height: 40px;
     background: #000;
