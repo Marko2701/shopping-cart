@@ -1,4 +1,4 @@
-li.product{
+.product__wrapper{
     width: 30%;
     list-style-type: none;
     margin-bottom: 30px;
@@ -9,11 +9,11 @@ li.product{
     line-height: 35px;
 }
 
-li.product:hover {
+.product__wrapper:hover {
     transform: scale(1.1);
 }
 
-li.product img {
+.product__wrapper img {
     width: 100%;
 }
 

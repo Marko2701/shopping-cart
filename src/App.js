@@ -11,63 +11,24 @@ const App = () => {
   const [totalQuantity, setTotalQuantity] = useState(0);
 
   useEffect(() => {
-    console.log(cartItems);
-    // Svaki put kada se ovo promeni, treba da se prodje kroz listu i saberu svi qty
+    let sum = 0;
+    const quantities = cartItems.map(item => item.quantity);
+    quantities.forEach(item => sum += item);
+
+    setTotalQuantity(sum);
   }, [cartItems]);
 
-  const incrementItem = (id, value) => {
-    const updatedCartItems = cartItems.map(item => {
-      let cartItem = item;
-
-      if (item.id === id) {
-        cartItem = {
-          ...item,
-          qty: item.qty + value
-        };
-      }
-
-      return cartItem;
-    });
-
-    setCartItems(updatedCartItems);
-  };
-
-  const decrementItem = (id, value) => {
-    const updatedCartItems = cartItems.map(item => item.id === id && item.qty > 1 ? { ...item, qty: item.qty - value } : item);
-    setCartItems(updatedCartItems);
-  };
-
-  const updateQuantity = (totalItems) => {
-    setTotalQuantity(totalItems);
-  };
-
-  const handleRemove = (productId) => {
-    const newList = cartItems.filter(item => item.id !== productId);
-    setCartItems(newList);
-
-    if (cartItems.length === 1) {
-      setTotalQuantity(0);
-    }
-  };
-
-  const clearCart = () => {
-    setCartItems([]);
-    setTotalQuantity(0);
-  };
-
   return (
-    <div className='App'>
+    <div className='App__wrapper'>
       <Header cartQuantity={totalQuantity} />
       <Switch>
 
         <Route path='/shoppingCart'>
           <ShoppingCartPage
+            setCartItems={setCartItems}
             cartItems={cartItems}
-            incrementItem={incrementItem}
-            decrementItem={decrementItem}
-            updateQuantity={updateQuantity}
-            handleRemove={handleRemove}
-            clearCart={clearCart} />
+            setTotalQuantity={setTotalQuantity}
+          />
         </Route>
 
         <Route path='/'>
@@ -80,6 +41,6 @@ const App = () => {
       </Switch>
     </div>
   );
-}
+};
 
 export default App;

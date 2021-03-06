@@ -1,4 +1,4 @@
-li.cartProduct {
+.shoppingCartProduct__wrapper {
     display: flex;
     align-items: center;
     width: 100%;
@@ -7,12 +7,12 @@ li.cartProduct {
     
 }
 
-li.cartProduct img{
+.shoppingCartProduct__wrapper img{
     width: 10%;
     
 }
 
-div.nameNprice {
+.nameNprice__wrapper {
     width: 48%;
     display: flex;
     flex-direction: column;
@@ -20,17 +20,17 @@ div.nameNprice {
     line-height: 30px;
 }
 
-p.qty {
+.quantity {
     padding-right: 40px;
     width: 15%;
 }
 
-div.cartButtons {
+.cartButtons {
     display: flex;
     width: 30%;
 }
 
-div.cartButtons button{
+.cartButtons button{
    width: 50%;
    height: 50px;
    margin: 0 3px; 
@@ -38,14 +38,15 @@ div.cartButtons button{
    cursor: pointer;
 }
 
-div.cartButtons button:hover {
+.cartButtons i {
+    font-size: 25px;
+}
+
+.cartButtons button:hover {
     background-color: #dbdbe0;
 }
 
-button#delete{
+.delete{
     margin-left: 50px;
 }
 
-div.cartButtons button i {
-    font-size: 25px;
-}

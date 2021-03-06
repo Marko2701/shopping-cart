@@ -1,4 +1,4 @@
-.search {
+.search__wrapper {
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.searchWrapper {
+.inputSearch {
     display: flex;  
     align-items: center;
     width: 25%;
@@ -14,16 +14,16 @@
     background-color: #f7f7f9; 
 }
 
-.searchWrapper:hover {
+.inputSearch:hover {
     box-shadow: 0px 0 3px 3px  #e2e2e7;
 }
 
-
-.searchIcon {
+.inputIcon {
    display: flex;
    align-items: center;
    text-indent: 10px; 
 }
+
 input {
     width: 100%;
     border: none;

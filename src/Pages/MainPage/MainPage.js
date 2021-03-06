@@ -33,7 +33,7 @@ const MainPage = ({
   };
 
   return (
-    <div id='mainPage'>
+    <div className='mainPage__wrapper'>
       <Search products={filteredProducts} setValue={setSearchTerm} />
       <ProductsList products={filteredProducts} addToCart={addToCart} />
     </div>

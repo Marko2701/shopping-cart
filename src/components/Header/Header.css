@@ -4,11 +4,11 @@
     justify-content: center;
     align-items: center;
 }
-header img {
+.header__wrapper img {
     width: 80px;
 }
 
-header p {
+.header__wrapper p {
     font-size: 20px;
     padding: 0 20px;
 }
@@ -17,8 +17,8 @@ header p {
     padding-right: 5px;
 }
 
-header a {
+.header__wrapper a {
     text-decoration: none;
-    color: rgb(202, 93, 93);
+    color: black;
 }
 
