@@ -1,44 +1,95 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ShoppingCartList from '../../components/ShoppingCartList/ShoppingCartList';
 import ShoppingCartCheckout from '../../components/ShoppingCartCheckout/ShoppingCartCheckout';
 import './ShoppingCartPage.css';
 
-const ShoppingCartPage = (props) => {
-  const [cartItems, setCartItems] = useState([]);
+const ShoppingCartPage = ({
+  cartItems,
+  setCartItems,
+  setTotalQuantity
+}) => {
 
-  const addToCart = (product) => {
-    const exist = cartItems.find(item => item.id === product.id);
+  const incrementItem = (id) => {
+    const updatedCartItems = cartItems.map(item => {
+      let cartItem = item;
 
-    if (exist) {
-      setCartItems([...cartItems])
-    }
-    else {
-      setCartItems([...cartItems, product])
+      if (item.id === id) {
+        cartItem = {
+          ...item,
+          quantity: item.quantity + 1
+        };
+      }
+
+      return cartItem;
+    });
+
+    setCartItems(updatedCartItems);
+  };
+
+  const decrementItem = (id) => {
+    const updatedCartItems = cartItems.map(item => {
+      let cartItem = item;
+
+      if (item.id === id && item.quantity > 1) {
+        cartItem = {
+          ...item,
+          quantity: item.quantity - 1
+        };
+      }
+
+      return cartItem;
+    });
+
+    setCartItems(updatedCartItems);
+  };
+
+  const handleRemove = (productId) => {
+    const newList = cartItems.filter(item => item.id !== productId);
+    setCartItems(newList);
+
+    if (cartItems.length === 1) {
+      setTotalQuantity(0);
     }
   };
 
+  const updateQuantity = (totalItems) => {
+    setTotalQuantity(totalItems);
+  };
+
+  const clearCart = () => {
+    setCartItems([]);
+    setTotalQuantity(0);
+  };
+
   return (
-    <div id='shoppingCartPage'>
-      {props.cartItems.length === 0 &&
-        <div id='emptyCart'>
+    <div className='emptyCart__wrapper'>
+      {cartItems.length === 0 &&
+        <div className='emptyCart'>
           Your Cart is empty!
     </div>}
-      {props.cartItems.length > 0 && <div id='cart'>
+      {cartItems.length > 0 && <div className='shoppingCartPage__wrapper'>
         <ShoppingCartList
-          cartItems={props.cartItems}
-          incrementItem={props.incrementItem}
-          decrementItem={props.decrementItem}
-          handleRemove={props.handleRemove}
+          cartItems={cartItems}
+          incrementItem={incrementItem}
+          decrementItem={decrementItem}
+          handleRemove={handleRemove}
         />
         <ShoppingCartCheckout
-          cartItems={props.cartItems}
-          updateQuantity={props.updateQuantity}
-          clearCart={props.clearCart}
+          cartItems={cartItems}
+          updateQuantity={updateQuantity}
+          clearCart={clearCart}
         />
       </div>
       }
     </div>
   );
+};
+
+ShoppingCartPage.propTypes = {
+  cartItems: PropTypes.array,
+  setCartItems: PropTypes.func,
+  setTotalQuantity: PropTypes.func
 };
 
 export default ShoppingCartPage;

@@ -1,28 +1,54 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ShoppingCartProduct.css';
 
-function ShoppingCartProduct(props) {
-    console.log(props)
-    return (
+function ShoppingCartProduct({
+  product,
+  incrementItem,
+  decrementItem,
+  handleRemove
+}) {
 
-        <li className='cartProduct'>
-            <img src={props.product.image} />
+  return (
 
-            <div className='nameNprice'>
-                <h3>{props.product.name}</h3>
-                <p>Price: ${props.product.price}</p>
-            </div>
+    <li className='shoppingCartProduct__wrapper'>
+      <img src={product.image} />
 
-            <p className='qty'>Qty: {props.product.qty}</p>
+      <div className='nameNprice__wrapper'>
+        <h3>{product.name}</h3>
+        <p>Price: ${product.price}</p>
+      </div>
 
-            <div className='cartButtons'>
-                <button onClick={() => props.incrementItem(props.product.id, 1)}><i className="fas fa-plus-circle"></i></button>
-                <button onClick={() => props.decrementItem(props.product.id, 1)}><i className="fas fa-minus-circle"></i></button>
-                <button id='delete' onClick={() => props.handleRemove(props.product.id)}><i className="fas fa-trash-alt"></i></button>
-            </div>
-        </li>
+      <p className='quantity'>Qty: {product.quantity}</p>
 
-    )
+      <div className='cartButtons'>
+        <button
+          onClick={() => incrementItem(product.id)}
+        >
+          <i className="fas fa-plus-circle"></i>
+        </button>
+
+        <button onClick={() => decrementItem(product.id)}
+        >
+          <i className="fas fa-minus-circle"></i>
+        </button>
+
+        <button className='delete'
+          onClick={() => handleRemove(product.id)}
+        >
+          <i className="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </li>
+
+  );
 }
+
+ShoppingCartProduct.propTypes = {
+  product: PropTypes.object,
+  incrementItem: PropTypes.func,
+  decrementItem: PropTypes.func,
+  handleRemove: PropTypes.func
+};
 
 export default ShoppingCartProduct;

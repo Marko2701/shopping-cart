@@ -1,38 +1,46 @@
 import React from 'react';
-import './ShoppingCartCheckout.css'
+import PropTypes from 'prop-types';
+import './ShoppingCartCheckout.css';
 
-function ShoppingCartCheckout(props) {
+function ShoppingCartCheckout({
+  cartItems,
+  clearCart
+}) {
 
-    const totalQuantity = () => {
-        let sum = 0;
-        let quantities = props.cartItems.map(e => e.qty);
-        quantities.forEach(quantity => sum += quantity);
+  const totalQuantity = () => {
+    let sum = 0;
+    const quantities = cartItems.map(item => item.quantity);
+    quantities.forEach(item => sum += item);
 
-        return sum;
-    };
+    return sum;
+  };
 
-    const totalPayment = () => {
-        let sum = 0;
-        let prices = props.cartItems.map(e => e.price * e.qty);
-        prices.forEach(price => sum += price);
+  const totalPayment = () => {
+    let sum = 0;
+    const prices = cartItems.map(item => item.price * item.quantity);
+    prices.forEach(price => sum += price);
 
-        return sum;
-    };
+    return sum;
+  };
 
-    props.updateQuantity(totalQuantity());
-
-    return (
-        <div className='checkout'>
-            <p>Total Items</p>
-            <h3>{totalQuantity()}</h3>
-            <p>Total Payment</p>
-            <h3>${totalPayment()}</h3>
-            <div className='checkoutBtns'>
-                <button className='checkoutBtn'>CHECKOUT</button>
-                <button className='clearBtn' onClick={() => props.clearCart()}>CLEAR</button>
-            </div>
-        </div>
-    )
+  return (
+    <div className='shoppingCartCheckout__wrapper'>
+      <p>Total Items</p>
+      <h3>{totalQuantity()}</h3>
+      <p>Total Payment</p>
+      <h3>${totalPayment()}</h3>
+      <div className='checkoutBtns'>
+        <button className='checkoutBtn'>CHECKOUT</button>
+        <button className='clearBtn'
+          onClick={() => clearCart()}>CLEAR</button>
+      </div>
+    </div>
+  );
 }
+
+ShoppingCartCheckout.propTypes = {
+  cartItems: PropTypes.array,
+  clearCart: PropTypes.func
+};
 
 export default ShoppingCartCheckout;
