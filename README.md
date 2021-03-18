@@ -1,6 +1,21 @@
-# Getting Started with Create React App
+# Shopping Cart
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project enables you to:
+
+- search and view products
+- add products to cart
+- change quantity
+- remove one or all products from cart
+
+# Screenshots
+
+Main Page:
+
+![](images/main-page.png)
+
+Cart Page:
+
+![](images/cart-page.png)
 
 ## Available Scripts
 
