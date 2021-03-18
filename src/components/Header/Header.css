@@ -1,24 +1,28 @@
-.header__wrapper {
-    margin: 30px 0 30px 0;
+.header {
+    width: 20%;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
-.header__wrapper img {
+
+.header img {
     width: 80px;
 }
 
-.header__wrapper p {
+.header p {
     font-size: 20px;
     padding: 0 20px;
 }
 
-.cart-image {
-    padding-right: 5px;
-}
-
-.header__wrapper a {
+.header a {
     text-decoration: none;
     color: black;
 }
+
+.header__cart-image {
+    padding-right: 5px;
+}
+
+
 

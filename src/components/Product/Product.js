@@ -8,11 +8,11 @@ function Product({
 }) {
 
   return (
-    <li className='product__wrapper'>
+    <li className='product'>
       <img src={product.image} />
       <p>{product.name}</p>
       <h2>${product.price}</h2>
-      <div className='addToCartBtn'>
+      <div className='product__button'>
         <button
           onClick={() => addToCart(product)}>
           Add to Cart

@@ -2,28 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Search.css';
 
-function Search({
+const Search = ({
   products,
   setValue
-}) {
+}) => {
 
   return (
-    <div className="search__wrapper">
+    <div className="search">
       {products.length === 1 ?
         <p>{products.length} Product</p>
         :
         <p>{products.length} Products</p>
       }
 
-      <div className='inputSearch'>
-        <span className='inputIcon'><i className="fas fa-search"></i></span>
-        <input type='text' placeholder='Start searching'
+      <div className='search__input'>
+        <span className='search__input-icon'>
+          <i className="fas fa-search"></i>
+        </span>
+        <input 
+          type='text' 
+          placeholder='Start searching'
           onChange={(e) => setValue(e.target.value)}
         />
       </div>
     </div>
   );
-}
+};
 
 Search.propTypes = {
   products: PropTypes.array,

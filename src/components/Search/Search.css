@@ -1,12 +1,13 @@
-.search__wrapper {
+.search {
     width: 60%;
     margin: 0 auto;
+    padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.inputSearch {
+.search__input {
     display: flex;  
     align-items: center;
     width: 25%;
@@ -14,17 +15,17 @@
     background-color: #f7f7f9; 
 }
 
-.inputSearch:hover {
+.search__input:hover {
     box-shadow: 0px 0 3px 3px  #e2e2e7;
 }
 
-.inputIcon {
+.search__input-icon {
    display: flex;
    align-items: center;
    text-indent: 10px; 
 }
 
-input {
+.search__input input {
     width: 100%;
     border: none;
     outline: none;

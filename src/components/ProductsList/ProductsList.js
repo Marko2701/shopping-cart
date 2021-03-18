@@ -9,7 +9,7 @@ function ProductsList({
 }) {
 
   return (
-    <ul className='productsList__wrapper'>
+    <ul className='products-list'>
       {products.map(product =>
         <Product
           key={product.id}

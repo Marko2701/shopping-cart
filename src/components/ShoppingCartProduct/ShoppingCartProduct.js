@@ -2,26 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCartProduct.css';
 
-function ShoppingCartProduct({
+const ShoppingCartProduct = ({
   product,
   incrementItem,
   decrementItem,
   handleRemove
-}) {
+}) => {
 
   return (
 
-    <li className='shoppingCartProduct__wrapper'>
+    <li className='shopping-cart-product'>
       <img src={product.image} />
 
-      <div className='nameNprice__wrapper'>
+      <div className='shopping-cart-product__name-and-price'>
         <h3>{product.name}</h3>
         <p>Price: ${product.price}</p>
       </div>
 
-      <p className='quantity'>Qty: {product.quantity}</p>
+      <p className='shopping-cart-product__quantity'>Qty: {product.quantity}</p>
 
-      <div className='cartButtons'>
+      <div className='shopping-cart-product__buttons'>
         <button
           onClick={() => incrementItem(product.id)}
         >
@@ -33,7 +33,7 @@ function ShoppingCartProduct({
           <i className="fas fa-minus-circle"></i>
         </button>
 
-        <button className='delete'
+        <button className='shopping-cart-product__delete-btn'
           onClick={() => handleRemove(product.id)}
         >
           <i className="fas fa-trash-alt"></i>
@@ -42,7 +42,7 @@ function ShoppingCartProduct({
     </li>
 
   );
-}
+};
 
 ShoppingCartProduct.propTypes = {
   product: PropTypes.object,

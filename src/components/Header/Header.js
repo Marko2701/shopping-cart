@@ -7,14 +7,14 @@ const Header = ({
   cartQuantity
 }) => {
   return (
-    <header className='header__wrapper'>
+    <header className='header'>
       <Link to='/'>
         <img src='https://cutt.ly/tzoGJtp' />
       </Link>
-      <p>About</p>
+      
       <Link to='/shoppingCart'>
         <p>
-          <span className='cart-image'>
+          <span className='header__cart-image'>
             <i className="fas fa-shopping-cart"></i>
           </span>
           Cart({cartQuantity})

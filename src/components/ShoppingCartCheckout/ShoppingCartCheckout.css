@@ -1,4 +1,4 @@
-.shoppingCartCheckout__wrapper {
+.shopping-cart-checkout {
     margin-left: 100px;
     width: 50%;
     height: 300px;
@@ -11,19 +11,19 @@
     font-weight: lighter;
 }
 
-.checkoutBtns button{
+.shopping-cart-checkout__buttons button{
     padding: 15px;
     font-size: small;
     transition: ease-in;
     cursor: pointer;
 }
 
-.checkoutBtn {
+.shopping-cart-checkout__checkout-btn {
     background-color: black;
     color: white;
 }
 
-.clearBtn {
+.shopping-cart-checkout__clear-btn {
     border: none;
     outline: none;
     background-color: white;

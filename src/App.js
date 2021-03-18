@@ -19,7 +19,7 @@ const App = () => {
   }, [cartItems]);
 
   return (
-    <div className='App__wrapper'>
+    <div className='app'>
       <Header cartQuantity={totalQuantity} />
       <Switch>
 

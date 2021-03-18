@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './ShoppingCartCheckout.css';
 
-function ShoppingCartCheckout({
+const ShoppingCartCheckout = ({
   cartItems,
-  clearCart
-}) {
+  clearCart,
+  updateCheckout
+}) => {
 
   const totalQuantity = () => {
     let sum = 0;
@@ -24,23 +25,33 @@ function ShoppingCartCheckout({
   };
 
   return (
-    <div className='shoppingCartCheckout__wrapper'>
+    <div className='shopping-cart-checkout'>
       <p>Total Items</p>
       <h3>{totalQuantity()}</h3>
       <p>Total Payment</p>
       <h3>${totalPayment()}</h3>
-      <div className='checkoutBtns'>
-        <button className='checkoutBtn'>CHECKOUT</button>
-        <button className='clearBtn'
-          onClick={() => clearCart()}>CLEAR</button>
+      <div className='shopping-cart-checkout__buttons'>
+        <button 
+          className='shopping-cart-checkout__checkout-btn'
+          onClick={() => updateCheckout()}
+        >
+          CHECKOUT
+        </button>
+        <button 
+          className='shopping-cart-checkout__clear-btn'
+          onClick={() => clearCart()}
+        >
+          CLEAR
+        </button>
       </div>
     </div>
   );
-}
+};
 
 ShoppingCartCheckout.propTypes = {
   cartItems: PropTypes.array,
-  clearCart: PropTypes.func
+  clearCart: PropTypes.func,
+  setCheckout: PropTypes.func
 };
 
 export default ShoppingCartCheckout;

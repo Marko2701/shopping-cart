@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ShoppingCartProduct from '../ShoppingCartProduct/ShoppingCartProduct';
-import './ShoppingCartList.css';
 
-function ShoppingCartLIst({
+const ShoppingCartLIst = ({
   cartItems,
   incrementItem,
   decrementItem,
   handleRemove
-}) {
+}) => {
 
   return (
-    <ul className='shoppingCartList__wrapper'>
+    <ul className='shopping-cart-list'>
       {cartItems.map(product =>
         <ShoppingCartProduct
           key={product.id}
@@ -21,7 +20,7 @@ function ShoppingCartLIst({
           handleRemove={handleRemove} />)}
     </ul>
   );
-}
+};
 
 ShoppingCartLIst.propTypes = {
   cartItems: PropTypes.array,
